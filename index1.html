@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +8,36 @@
     <title>Document</title>
 </head>
 <!-- Знайти суми елементів у вказаній області -->
+
 <body>
-    
-<script>
 
-function neyArr(rowsCount, colsCount) {
-    let arr = []
-    for (let i = 0; i < rowsCount; i++) {
-        arr.push(Array(colsCount).fill(0))
-    }
-    return arr
-}
+    <script>
 
-function fillArr(arr, rowsCount, colsCount) {
-    let arr = neyArr(rowsCount,colsCount)
-    
-    for (let i = 0; i <rowsCount; i++) {
-    
-        
-    }
-}
+        function newArr(rowsCount, colsCount) {
+            let arr = []
 
-const rowsCount=parseInt(prompt("Введіть кількість рядків"))
-const colsCount=parseInt(prompt("Введіть кількість стовпців"))
-
-
-document.write(neyArr(rowsCount, colsCount))
-
-
-</script>
+            for (let i = 0; i < rowsCount; i++) {
+                arr[i] = []
+                for (let j = 0; j < colsCount; j++)
+                    arr[i].push(Math.floor(Math.random() * 4))
+            }
+            return arr
+        }
 
 
 
-    
+        const rowsCount = parseInt(prompt("Введіть кількість рядків"))
+        const colsCount = parseInt(prompt("Введіть кількість стовпців"))
+
+
+        document.write(newArr(rowsCount, colsCount))
+
+
+    </script>
+
+
+
+
 </body>
+
 </html>
