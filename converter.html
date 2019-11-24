@@ -9,26 +9,25 @@
 </head>
 
 <body>
+    <h4>Введіть сумму валюти</h3>
     <label>
         Сумма в гривнях
         <input type="text" name="" id="hrnId" value="0">
     </label>
     <br>
-    <button id="conwertBtn">Конвертувати</button>
-
-    <button id="resetBtn">Обнулити</button>
-    <br>
     <label>
-        Сума в євро
+        Сумма в євро
         <input type="text" name="" id="eurId" value="0">
     </label>
     <br>
 
     <label>
-        Сума в долларах
+        Сумма в долларах
         <input type="text" name="" id="usdId" value="0">
     </label>
-
+    <br><br>
+    <button id="conwertBtn">Конвертувати</button>
+    <button id="resetBtn">Очистити</button>
 
     <script>
         function conwertBtnClic() {
@@ -38,7 +37,7 @@
             let eur = parseInt(eurId.value)
             const usdId = document.getElementById('usdId')
             let usd = parseInt(usdId.value)
-
+            
             if (hrn != 0) {
                 let eur = (hrn / 27).toFixed(2)
                 let usd = (hrn / 24).toFixed(2)
@@ -51,14 +50,12 @@
                 hrnId.value = hrn
                 usdId.value = usd
             }
-
             if (usd != 0) {
                 let hrn = (usd * 24).toFixed(2)
                 let eur = (usd * 0.9).toFixed(2)
                 eurId.value = eur
-                usdId.value = usd
+                hrnId.value = hrn
             }
-
         }
 
         function resetBtnClic() {
@@ -72,10 +69,8 @@
 
         const btnConwert = document.getElementById('conwertBtn')
         btnConwert.onclick = conwertBtnClic
-
         const btnReset = document.getElementById('resetBtn')
         btnReset.onclick = resetBtnClic
-
 
     </script>
 
